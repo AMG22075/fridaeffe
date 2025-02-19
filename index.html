@@ -7,9 +7,16 @@
 
     <meta id="meta-description" name="description" content="Handmade classy bracelets. Discover unique jewelry crafted with love.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@heroicons/react/outline"></script>
 
     <style>
         body { font-family: 'Inter', sans-serif; }
+        .flag-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 10px;
+            margin-right: 5px;
+        }
         .flag-icon {
             width: 20px;
             height: 15px;
@@ -17,6 +24,25 @@
             background-size: cover;
             cursor: pointer;
             border-radius: 3px;
+        }
+        .tooltip {
+            position: absolute;
+            background-color: black;
+            color: white;
+            font-size: 12px;
+            padding: 3px 6px;
+            border-radius: 4px;
+            white-space: nowrap;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.1s ease-in-out;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .flag-container:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
         }
     </style>
 </head>
@@ -26,9 +52,18 @@
     </header>
 
     <div class="absolute top-6 right-6 flex gap-3">
-        <img src="https://flagcdn.com/w20/gb.png" class="flag-icon" onclick="changeLanguage('en')" alt="English">
-        <img src="https://flagcdn.com/w20/it.png" class="flag-icon" onclick="changeLanguage('it')" alt="Italian">
-        <img src="https://flagcdn.com/w20/jp.png" class="flag-icon" onclick="changeLanguage('ja')" alt="Japanese">
+        <div class="flag-container">
+            <img src="https://flagcdn.com/w20/gb.png" class="flag-icon" onclick="changeLanguage('en')" alt="English">
+            <span class="tooltip">English</span>
+        </div>
+        <div class="flag-container">
+            <img src="https://flagcdn.com/w20/it.png" class="flag-icon" onclick="changeLanguage('it')" alt="Italiano">
+            <span class="tooltip">Italiano</span>
+        </div>
+        <div class="flag-container">
+            <img src="https://flagcdn.com/w20/jp.png" class="flag-icon" onclick="changeLanguage('ja')" alt="日本語">
+            <span class="tooltip">日本語</span>
+        </div>
     </div>
 
     <div class="flex flex-col items-center gap-6 mt-8 w-full max-w-[350px]">
@@ -38,19 +73,34 @@
         <img src="https://raw.githubusercontent.com/AMG22075/fridaeffe/refs/heads/main/img/Sole.jpg" alt="Product Image" class="w-full rounded-lg shadow-md">
 
         <nav aria-label="Primary Navigation" class="flex flex-col gap-4 w-full">
-            <a href="https://fridaeffe.etsy.com?coupon=FRD858" id="shopEtsy" class="bg-[#800202] hover:bg-red-900 text-white py-2 px-6 rounded-md text-md text-center w-full">
-                Compra su Etsy <strong>10% Sconto</strong>
+            <a href="https://fridaeffe.etsy.com?coupon=FRD858" id="shopEtsy" class="bg-[#800202] hover:bg-red-900 text-white py-2 px-6  rounded-md text-md text-center w-full flex items-center justify-center">
+                Compra su Etsy 10% Sconto
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 ml-2">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" />
+</svg>
+
             </a>
-            <a href="https://www.vinted.it/member/249274341" id="shopVinted" class="bg-[#800202] hover:bg-red-900 text-white py-2 px-6 rounded-md text-md text-center w-full">
+            <a href="https://www.vinted.it/member/249274341" id="shopVinted" class="bg-[#800202] hover:bg-red-900 text-white py-2 px-6 rounded-md text-md text-center w-full flex items-center justify-center">
                 Compra su Vinted
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 ml-2">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" />
+</svg>
+
+
             </a>
         </nav>
     </div>
 
-    <footer class="mt-12">
+    <footer class="mt-16 flex flex-col items-center gap-2">
         <a href="https://www.instagram.com/fridaeffe_bracelets/" target="_blank" aria-label="Follow on Instagram">
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="w-8 opacity-50 hover:opacity-100 transition-opacity">
         </a>
+        <p class="text-xs text-[#800202] mt-4">&copy; Frida Effe Bracelets, <span id="currentYear"></span></p>
+        <p class="text-xs text-[#800202] mt-1" style="line-height: 1.1;">Milano, Italia</p>
     </footer>
+
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
