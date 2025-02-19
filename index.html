@@ -10,24 +10,51 @@
     <link rel="canonical" href="https://fridaeffe-bracelets.com">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        function changeLanguage(lang) {
-            const translations = {
-                en: {
-                    shopEtsy: 'Buy on Etsy <strong>10% Discount</strong>',
-                    shopVinted: 'Buy on Vinted',
-                    textAbovePhoto: 'Handmade Classy Bracelets'
-                },
-                it: {
-                    shopEtsy: 'Compra su Etsy <strong>10% Sconto</strong>',
-                    shopVinted: 'Compra su Vinted',
-                    textAbovePhoto: 'Braccialetti di Classe Fatti a Mano'
-                }
-            };
+        const translations = {
+            en: {
+                shopEtsy: 'Buy on Etsy <strong>10% Discount</strong>',
+                shopVinted: 'Buy on Vinted',
+                textAbovePhoto: 'Handmade Classy Bracelets'
+            },
+            it: {
+                shopEtsy: 'Compra su Etsy <strong>10% Sconto</strong>',
+                shopVinted: 'Compra su Vinted',
+                textAbovePhoto: 'Braccialetti di Classe Fatti a Mano'
+            },
+            ja: {
+                shopEtsy: 'Etsyで購入 <strong>10％割引</strong>',
+                shopVinted: 'Vintedで購入',
+                textAbovePhoto: '手作りの上品なブレスレット'
+            }
+        };
 
+        function changeLanguage(lang) {
             document.getElementById('shopEtsy').innerHTML = translations[lang].shopEtsy;
             document.getElementById('shopVinted').innerText = translations[lang].shopVinted;
             document.getElementById('textAbovePhoto').innerText = translations[lang].textAbovePhoto;
         }
+
+        // Detect user's location to determine language
+        function detectUserLocation() {
+            fetch('https://ipinfo.io?token=YOUR_API_KEY')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.country === 'IT') {
+                        changeLanguage('it'); // Italy = Italian
+                    } else if (data.country === 'JP') {
+                        changeLanguage('ja'); // Japan = Japanese
+                    } else {
+                        changeLanguage('en'); // All other countries = English
+                    }
+                })
+                .catch(err => {
+                    console.error('Error detecting location:', err);
+                    changeLanguage('en'); // Default to English if location can't be detected
+                });
+        }
+
+        // Call detectUserLocation when page loads
+        window.onload = detectUserLocation;
     </script>
     <style>
         body {
@@ -55,6 +82,9 @@
         </button>
         <button onclick="changeLanguage('it')" aria-label="Switch to Italian">
             <img src="https://flagcdn.com/w20/it.png" class="flag-icon" alt="Italian">
+        </button>
+        <button onclick="changeLanguage('ja')" aria-label="Switch to Japanese">
+            <img src="https://flagcdn.com/w20/jp.png" class="flag-icon" alt="Japanese">
         </button>
     </div>
 
