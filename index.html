@@ -15,15 +15,18 @@
                 en: {
                     shopEtsy: 'Buy on Etsy <strong>10% Discount</strong>',
                     shopVinted: 'Buy on Vinted',
+                    textAbovePhoto: 'Handmade Classy Bracelets'
                 },
                 it: {
                     shopEtsy: 'Compra su Etsy <strong>10% Sconto</strong>',
                     shopVinted: 'Compra su Vinted',
+                    textAbovePhoto: 'Braccialetti di Classe Fatti a Mano'
                 }
             };
 
             document.getElementById('shopEtsy').innerHTML = translations[lang].shopEtsy;
             document.getElementById('shopVinted').innerText = translations[lang].shopVinted;
+            document.getElementById('textAbovePhoto').innerText = translations[lang].textAbovePhoto;
         }
     </script>
     <style>
@@ -56,6 +59,9 @@
     </div>
 
     <div class="flex flex-col items-center gap-8 mt-8 w-full max-w-[320px]">
+        <p id="textAbovePhoto" class="text-xl font-bold text-[#800202] p-4 text-center">
+            Handmade Classy Bracelets
+        </p>
         <img src="https://raw.githubusercontent.com/AMG22075/fridaeffe/refs/heads/main/img/Sole.jpg" alt="Product Image" class="w-full rounded-lg shadow-md">
 
         <nav aria-label="Primary Navigation" class="flex flex-col gap-5 w-full">
@@ -68,9 +74,9 @@
         </nav>
     </div>
 
-    <footer class="absolute bottom-6">
+    <footer class="mt-12">
         <a href="https://www.instagram.com/fridaeffe_bracelets/" target="_blank" aria-label="Follow on Instagram">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="w-8 opacity-50 hover:opacity-100 transition-opacity">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="w-6 opacity-50 hover:opacity-100 transition-opacity">
         </a>
     </footer>
 </body>
