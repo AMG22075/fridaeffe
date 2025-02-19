@@ -34,23 +34,34 @@
             document.getElementById('textAbovePhoto').innerText = translations[lang].textAbovePhoto;
         }
 
-        // Detect user's location to determine language
+        // Use Geolocation API to detect user's location
         function detectUserLocation() {
-            fetch('https://ipinfo.io?token=YOUR_API_KEY')
-                .then(response => response.json())
-                .then(data => {
-                    if (data.country === 'IT') {
-                        changeLanguage('it'); // Italy = Italian
-                    } else if (data.country === 'JP') {
-                        changeLanguage('ja'); // Japan = Japanese
-                    } else {
-                        changeLanguage('en'); // All other countries = English
-                    }
-                })
-                .catch(err => {
-                    console.error('Error detecting location:', err);
-                    changeLanguage('en'); // Default to English if location can't be detected
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+
+                    // Use lat/lon to detect the user's location (e.g. via a reverse geocoding service)
+                    fetch(`https://geocode.xyz/${lat},${lon}?json=1`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.country === 'Italy') {
+                                changeLanguage('it'); // Italy = Italian
+                            } else if (data.country === 'Japan') {
+                                changeLanguage('ja'); // Japan = Japanese
+                            } else {
+                                changeLanguage('en'); // All other countries = English
+                            }
+                        })
+                        .catch(err => {
+                            console.error('Error detecting location:', err);
+                            changeLanguage('en'); // Default to English if location can't be detected
+                        });
                 });
+            } else {
+                console.error('Geolocation not supported');
+                changeLanguage('en'); // Default to English if geolocation is not supported
+            }
         }
 
         // Call detectUserLocation when page loads
