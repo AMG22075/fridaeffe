@@ -36,15 +36,17 @@
             display: inline-block;
             background-size: cover;
             cursor: pointer;
+            border-radius: 4px;
+            opacity: 1;
         }
     </style>
 </head>
-<body class="relative flex flex-col items-center justify-center min-h-screen bg-[#f5e9dc] text-black px-6 py-8">
+<body class="relative flex flex-col items-center justify-center min-h-screen bg-[#f5e9dc] text-black px-12 py-12">
     <header class="absolute top-4 left-4">
         <img src="https://raw.githubusercontent.com/AMG22075/fridaeffe/refs/heads/main/img/Logo%202.jpeg" alt="Brand Logo" class="w-20 rounded-full border border-gray-300">
     </header>
 
-    <div class="absolute top-4 right-4 flex gap-4">
+    <div class="absolute top-4 right-4 flex gap-4 items-center">
         <button onclick="changeLanguage('en')" aria-label="Switch to English">
             <img src="https://flagcdn.com/w20/gb.png" class="flag-icon" alt="English">
         </button>
@@ -62,7 +64,7 @@
         </a>
     </nav>
 
-    <footer class="absolute bottom-4">
+    <footer class="absolute bottom-6">
         <a href="https://www.instagram.com/fridaeffe_bracelets/" target="_blank" aria-label="Follow on Instagram">
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="w-8 opacity-50 hover:opacity-100 transition-opacity">
         </a>
