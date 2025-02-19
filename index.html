@@ -120,6 +120,28 @@
             document.getElementById("textAbovePhoto").textContent = translations[lang].textAbovePhoto;
             document.getElementById("shopEtsyText").textContent = translations[lang].shopEtsyText;
             document.getElementById("shopVintedText").textContent = translations[lang].shopVintedText;
+       
+         function detectUserLanguage() {
+            fetch("https://ipapi.co/json/")
+                .then(response => response.json())
+                .then(data => {
+                    const countryCode = data.country_code.toLowerCase();
+                    let detectedLang = "en"; // Default to English
+
+                    if (countryCode === "it") {
+                        detectedLang = "it";
+                    } else if (countryCode === "jp" || countryCode === "ja") {
+                        detectedLang = "ja";
+                    }
+
+                    changeLanguage(detectedLang);
+                })
+                .catch(error => console.error("Error detecting location:", error));
+        }
+
+        // Auto-detect language on page load
+        window.onload = detectUserLanguage;
+        
         }
     </script>
 </body>
