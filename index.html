@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frida Effe Bracelets</title>
-
     <meta id="meta-description" name="description" content="Handmade classy bracelets. Discover unique jewelry crafted with love.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@heroicons/react/outline"></script>
-
     <style>
         body { font-family: 'Inter', sans-serif; }
         .flag-container {
@@ -73,19 +71,17 @@
         <img src="https://raw.githubusercontent.com/AMG22075/fridaeffe/refs/heads/main/img/Sole.jpg" alt="Product Image" class="w-full rounded-lg shadow-md">
 
         <nav aria-label="Primary Navigation" class="flex flex-col gap-4 w-full">
-          <a href="https://fridaeffe.etsy.com?coupon=FRD858" id="shopEtsy" class="bg-[#800202] hover:bg-opacity-90 text-white py-2 px-6 rounded-md text-md text-center w-full flex items-center justify-center group">
-    Compra su Etsy (Sconto 10%)
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" class="size-5 ml-2 stroke-[0.5]">
-        <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" />
-    </svg>
-</a>
-            <a href="https://www.vinted.it/member/249274341" id="shopVinted" class="bg-[#800202] hover:bg-opacity-90 text-white py-2 px-6 rounded-md text-md text-center w-full flex items-center justify-center">
-                Compra su Vinted
+            <a href="https://fridaeffe.etsy.com?coupon=FRD858" id="shopEtsy" class="bg-[#800202] hover:bg-opacity-90 text-white py-2 px-6 rounded-md text-md text-center w-full flex items-center justify-center">
+                <span id="shopEtsyText">Compra su Etsy (Sconto 10%)</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" class="size-5 ml-2 stroke-[0.5]">
-  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" />
-</svg>
-
-
+                    <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.2a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" />
+                </svg>
+            </a>
+            <a href="https://www.vinted.it/member/249274341" id="shopVinted" class="bg-[#800202] hover:bg-opacity-90 text-white py-2 px-6 rounded-md text-md text-center w-full flex items-center justify-center">
+                <span id="shopVintedText">Compra su Vinted</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" class="size-5 ml-2 stroke-[0.5]">
+                    <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" />
+                </svg>
             </a>
         </nav>
     </div>
@@ -100,6 +96,31 @@
 
     <script>
         document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+        function changeLanguage(lang) {
+            const translations = {
+                en: {
+                    textAbovePhoto: "Handmade Classy Bracelets",
+                    shopEtsyText: "Shop on Etsy (10% Discount)",
+                    shopVintedText: "Shop on Vinted"
+                },
+                it: {
+                    textAbovePhoto: "Braccialetti di Classe Fatti a Mano",
+                    shopEtsyText: "Compra su Etsy (Sconto 10%)",
+                    shopVintedText: "Compra su Vinted"
+                },
+                ja: {
+                    textAbovePhoto: "手作りの上品なブレスレット",
+                    shopEtsyText: "Etsyで購入 10％割引",
+                    shopVintedText: "Vintedで購入"
+                }
+            };
+
+            // Update the text content based on selected language
+            document.getElementById("textAbovePhoto").textContent = translations[lang].textAbovePhoto;
+            document.getElementById("shopEtsyText").textContent = translations[lang].shopEtsyText;
+            document.getElementById("shopVintedText").textContent = translations[lang].shopVintedText;
+        }
     </script>
 </body>
 </html>
