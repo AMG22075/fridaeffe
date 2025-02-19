@@ -4,129 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frida Effe Bracelets</title>
-    
-    <!-- Default SEO Meta Tags -->
+
     <meta id="meta-description" name="description" content="Handmade classy bracelets. Discover unique jewelry crafted with love.">
-    <meta name="keywords" content="bracelets, jewelry, handmade, Etsy, Vinted, Frida Effe">
-    <meta name="author" content="Frida Effe">
-    <link rel="canonical" href="https://fridaeffe-bracelets.com">
-    
-    <!-- Open Graph (SEO Image: Logo) -->
-    <meta property="og:image" content="https://raw.githubusercontent.com/AMG22075/fridaeffe/refs/heads/main/img/Logo%202.jpeg">
-    
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script>
-        const translations = {
-            en: {
-                shopEtsy: 'Buy on Etsy <strong>10% Discount</strong>',
-                shopVinted: 'Buy on Vinted',
-                textAbovePhoto: 'Handmade Classy Bracelets',
-                metaDescription: 'Handmade classy bracelets. Discover unique jewelry crafted with love.'
-            },
-            it: {
-                shopEtsy: 'Compra su Etsy <strong>10% Sconto</strong>',
-                shopVinted: 'Compra su Vinted',
-                textAbovePhoto: 'Braccialetti di Classe Fatti a Mano',
-                metaDescription: 'Braccialetti di classe fatti a mano. Scopri gioielli unici realizzati con amore.'
-            },
-            ja: {
-                shopEtsy: 'Etsyで購入 <strong>10％割引</strong>',
-                shopVinted: 'Vintedで購入',
-                textAbovePhoto: '手作りの上品なブレスレット',
-                metaDescription: '手作りの上品なブレスレット。愛情を込めて作られたユニークなジュエリーを発見してください。'
-            }
-        };
-
-        function changeLanguage(lang) {
-            document.getElementById('shopEtsy').innerHTML = translations[lang].shopEtsy;
-            document.getElementById('shopVinted').innerText = translations[lang].shopVinted;
-            document.getElementById('textAbovePhoto').innerText = translations[lang].textAbovePhoto;
-            document.getElementById('meta-description').setAttribute('content', translations[lang].metaDescription);
-        }
-
-        function detectUserLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    const lat = position.coords.latitude;
-                    const lon = position.coords.longitude;
-
-                    fetch(`https://geocode.xyz/${lat},${lon}?json=1`)
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.country === 'Italy') {
-                                changeLanguage('it'); 
-                            } else if (data.country === 'Japan') {
-                                changeLanguage('ja'); 
-                            } else {
-                                changeLanguage('en'); 
-                            }
-                        })
-                        .catch(err => {
-                            console.error('Error detecting location:', err);
-                            changeLanguage('en'); 
-                        });
-                });
-            } else {
-                console.error('Geolocation not supported');
-                changeLanguage('en'); 
-            }
-        }
-
-        window.onload = detectUserLocation;
-    </script>
 
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+        body { font-family: 'Inter', sans-serif; }
         .flag-icon {
             width: 20px;
             height: 15px;
             display: inline-block;
             background-size: cover;
             cursor: pointer;
-            border-radius: 2px;
-            opacity: 1;
+            border-radius: 3px;
         }
     </style>
 </head>
-<body class="relative flex flex-col items-center justify-center min-h-screen bg-[#f5e9dc] text-black px-8 py-10">
-    <header class="absolute top-4 left-4">
-        <img src="https://raw.githubusercontent.com/AMG22075/fridaeffe/refs/heads/main/img/Logo%202.jpeg" alt="Brand Logo" class="w-16 rounded-full border border-gray-300">
+<body class="relative flex flex-col items-center justify-center min-h-screen bg-[#f5e9dc] text-black px-10 py-14">
+    <header class="absolute top-6 left-6">
+        <img src="https://raw.githubusercontent.com/AMG22075/fridaeffe/refs/heads/main/img/Logo%20tetx.png" alt="Brand Logo" class="w-40">
     </header>
 
-    <div class="absolute top-4 right-4 flex gap-3 items-center">
-        <button onclick="changeLanguage('en')" aria-label="Switch to English">
-            <img src="https://flagcdn.com/w20/gb.png" class="flag-icon" alt="English">
-        </button>
-        <button onclick="changeLanguage('it')" aria-label="Switch to Italian">
-            <img src="https://flagcdn.com/w20/it.png" class="flag-icon" alt="Italian">
-        </button>
-        <button onclick="changeLanguage('ja')" aria-label="Switch to Japanese">
-            <img src="https://flagcdn.com/w20/jp.png" class="flag-icon" alt="Japanese">
-        </button>
+    <div class="absolute top-6 right-6 flex gap-3">
+        <img src="https://flagcdn.com/w20/gb.png" class="flag-icon" onclick="changeLanguage('en')" alt="English">
+        <img src="https://flagcdn.com/w20/it.png" class="flag-icon" onclick="changeLanguage('it')" alt="Italian">
+        <img src="https://flagcdn.com/w20/jp.png" class="flag-icon" onclick="changeLanguage('ja')" alt="Japanese">
     </div>
 
-    <div class="flex flex-col items-center gap-6 mt-6 w-full max-w-[320px]">
-        <p id="textAbovePhoto" class="text-lg font-semibold text-[#800202] p-2 text-center">
+    <div class="flex flex-col items-center gap-6 mt-8 w-full max-w-[350px]">
+        <p id="textAbovePhoto" class="text-lg font-semibold text-[#800202] p-3 text-center">
             Braccialetti di Classe Fatti a Mano
         </p>
         <img src="https://raw.githubusercontent.com/AMG22075/fridaeffe/refs/heads/main/img/Sole.jpg" alt="Product Image" class="w-full rounded-lg shadow-md">
 
         <nav aria-label="Primary Navigation" class="flex flex-col gap-4 w-full">
-            <a href="https://fridaeffe.etsy.com?coupon=FRD858" id="shopEtsy" class="bg-[#800202] hover:bg-red-900 text-white py-2 px-6 rounded-md text-xs text-center w-full">
+            <a href="https://fridaeffe.etsy.com?coupon=FRD858" id="shopEtsy" class="bg-[#800202] hover:bg-red-900 text-white py-2 px-6 rounded-md text-md text-center w-full">
                 Compra su Etsy <strong>10% Sconto</strong>
             </a>
-            <a href="https://www.vinted.it/member/249274341" id="shopVinted" class="bg-[#800202] hover:bg-red-900 text-white py-2 px-6 rounded-md text-xs text-center w-full">
+            <a href="https://www.vinted.it/member/249274341" id="shopVinted" class="bg-[#800202] hover:bg-red-900 text-white py-2 px-6 rounded-md text-md text-center w-full">
                 Compra su Vinted
             </a>
         </nav>
     </div>
 
-    <footer class="mt-10">
+    <footer class="mt-12">
         <a href="https://www.instagram.com/fridaeffe_bracelets/" target="_blank" aria-label="Follow on Instagram">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="w-4 opacity-50 hover:opacity-100 transition-opacity">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="w-8 opacity-50 hover:opacity-100 transition-opacity">
         </a>
     </footer>
 </body>
