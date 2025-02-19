@@ -1,24 +1,55 @@
 <!DOCTYPE html>
-<html>
-   <style>
-      body { 
-      background: #800202;
-      }   
-      div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      min-height: 50vh;
-      }
-      img {  
-      height: full;
-      width: auto
-      }
-   </style>
-   <body>
-      <div>
-         <img src="https://raw.githubusercontent.com/amg22075/fridaeffe/refs/heads/main/img/logo.PNG" >
-      </div>
-   </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frida Effe Bracelets</title>
+    <meta name="description" content="Braccialetti di classe fatti a mano">
+    <meta name="keywords" content="braccialetti, gioielli, handmade, Etsy, Vinted, Frida Effe">
+    <meta name="author" content="Frida Effe">
+    <link rel="canonical" href="https://fridaeffe-bracelets.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function changeLanguage(lang) {
+            const translations = {
+                en: {
+                    shopEtsy: 'Buy on Etsy 10% Discount',
+                    shopVinted: 'Buy on Vinted',
+                },
+                it: {
+                    shopEtsy: 'Compra su Etsy 10% Sconto',
+                    shopVinted: 'Compra su Vinted',
+                }
+            };
+
+            document.getElementById('shopEtsy').innerText = translations[lang].shopEtsy;
+            document.getElementById('shopVinted').innerText = translations[lang].shopVinted;
+        }
+    </script>
+</head>
+<body class="relative flex flex-col items-center justify-center h-screen bg-[#f5e9dc] text-black">
+    <header class="absolute top-4 left-4">
+        <img src="https://raw.githubusercontent.com/AMG22075/fridaeffe/refs/heads/main/img/Logo%202.jpeg" alt="Brand Logo" class="w-20 rounded-full border border-gray-300 shadow-md">
+    </header>
+    
+    <!-- Language Dropdown -->
+    <div class="absolute top-4 right-4">
+        <select class="bg-transparent text-black text-sm border border-gray-400 rounded-md px-2 py-1" onchange="changeLanguage(this.value)">
+            <option value="en">🇬🇧 English</option>
+            <option value="it">🇮🇹 Italiano</option>
+        </select>
+    </div>
+
+    <nav aria-label="Primary Navigation" class="flex gap-4">
+        <a href="https://fridaeffe.etsy.com?coupon=FRD858" id="shopEtsy" class="bg-[#800202] hover:bg-red-900 text-white py-3 px-6 rounded-md text-lg" aria-label="Compra su Etsy 10% Sconto">Compra su Etsy 10% Sconto</a>
+        <a href="https://www.vinted.it/member/249274341" id="shopVinted" class="bg-[#800202] hover:bg-red-900 text-white py-3 px-6 rounded-md text-lg" aria-label="Compra su Vinted">Compra su Vinted</a>
+    </nav>
+
+    <!-- Instagram Icon in Light Gray -->
+    <footer class="absolute bottom-4">
+        <a href="https://www.instagram.com/fridaeffe_bracelets/" target="_blank" aria-label="Follow on Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram" class="w-8 h-8 opacity-50 hover:opacity-100 transition-opacity filter grayscale">
+        </a>
+    </footer>
+</body>
 </html>
