@@ -112,7 +112,7 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="w-8 opacity-50 hover:opacity-100 transition-opacity">
         </a>
         <p class="text-xs text-[#800202] mt-4">&copy; Frida Effe Bracelets, <span id="currentYear"></span></p>
-        <p class="text-xs text-[#800202] mt-1" style="line-height: 1.1;">Milano, Italia</p>
+        <p id="locationText" class="text-xs text-[#800202] mt-1" style="line-height: 1.1;">Milano, Italia</p>
     </footer>
 
     <script>
@@ -120,9 +120,9 @@
 
         function changeLanguage(lang) {
             const translations = {
-                en: { textAbovePhoto: "Handmade Classy Bracelets", shopEtsyText: "Shop on Etsy (10% Discount)", shopVintedText: "Shop on Vinted" },
-                it: { textAbovePhoto: "Braccialetti di Classe Fatti a Mano", shopEtsyText: "Compra su Etsy (Sconto 10%)", shopVintedText: "Compra su Vinted" },
-                ja: { textAbovePhoto: "手作りの上品なブレスレット", shopEtsyText: "Etsyで購入（10％割引）", shopVintedText: "Vintedで購入" }
+                en: { textAbovePhoto: "Handmade Classy Bracelets", shopEtsyText: "Shop on Etsy (10% Discount)", shopVintedText: "Shop on Vinted", locationText: "Milan, Italy" },
+                it: { textAbovePhoto: "Braccialetti di Classe Fatti a Mano", shopEtsyText: "Compra su Etsy (Sconto 10%)", shopVintedText: "Compra su Vinted", locationText: "Milano, Italia" },
+                ja: { textAbovePhoto: "手作りの上品なブレスレット", shopEtsyText: "Etsyで購入（10％割引）", shopVintedText: "Vintedで購入", locationText: "ミラノ、イタリア" }
             };
 
             document.getElementById("textAbovePhoto").textContent = translations[lang].textAbovePhoto;
