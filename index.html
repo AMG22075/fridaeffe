@@ -6,6 +6,9 @@
     <title>Frida Effe Bracelets</title>
 
     <meta id="meta-description" name="description" content="Handmade classy bracelets. Discover unique jewelry crafted with love.">
+    <meta name="keywords" content="bracelets, jewelry, handmade, Etsy, Vinted, Frida Effe">
+    <meta name="author" content="Frida Effe">
+    <link rel="canonical" href="https://fridaeffe-bracelets.com">
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
@@ -120,15 +123,16 @@
 
         function changeLanguage(lang) {
             const translations = {
-                en: { textAbovePhoto: "Handmade Classy Bracelets", shopEtsyText: "Shop on Etsy (10% Discount)", shopVintedText: "Shop on Vinted", locationText: "Milan, Italy" },
-                it: { textAbovePhoto: "Braccialetti di Classe Fatti a Mano", shopEtsyText: "Compra su Etsy (Sconto 10%)", shopVintedText: "Compra su Vinted", locationText: "Milano, Italia" },
-                ja: { textAbovePhoto: "手作りの上品なブレスレット", shopEtsyText: "Etsyで購入（10％割引）", shopVintedText: "Vintedで購入", locationText: "ミラノ、イタリア" }
+                en: { textAbovePhoto: "Handmade Classy Bracelets", shopEtsyText: "Shop on Etsy (10% Discount)", shopVintedText: "Shop on Vinted", locationText: "Milan, Italy", metaDescription: "Handmade classy bracelets. Discover unique jewelry crafted with love." },
+                it: { textAbovePhoto: "Braccialetti di Classe Fatti a Mano", shopEtsyText: "Compra su Etsy (Sconto 10%)", shopVintedText: "Compra su Vinted", locationText: "Milano, Italia", metaDescription: "Braccialetti di classe fatti a mano. Scopri gioielli unici realizzati con amore." },
+                ja: { textAbovePhoto: "手作りの上品なブレスレット", shopEtsyText: "Etsyで購入（10％割引）", shopVintedText: "Vintedで購入", locationText: "ミラノ、イタリア", metaDescription: "手作りの上品なブレスレット。愛情を込めて作られたユニークなジュエリーを発見してください。" }
             };
 
             document.getElementById("textAbovePhoto").textContent = translations[lang].textAbovePhoto;
             document.getElementById("shopEtsyText").textContent = translations[lang].shopEtsyText;
             document.getElementById("shopVintedText").textContent = translations[lang].shopVintedText;
             document.getElementById("locationText").textContent = translations[lang].locationText;
+            document.getElementById('meta-description').setAttribute('content', translations[lang].metaDescription);
             localStorage.setItem("selectedLang", lang);
         }
 
