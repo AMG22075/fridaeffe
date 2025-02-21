@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frida Effe Bracelets</title>
@@ -8,144 +8,142 @@
     <meta id="meta-description" name="description" content="Handmade classy bracelets. Discover unique jewelry crafted with love.">
     <meta name="keywords" content="bracelets, jewelry, handmade, Etsy, Vinted, Frida Effe">
     <meta name="author" content="Frida Effe">
-
     <!-- Open Graph (SEO Image: Logo) -->
     <meta property="og:image" content="https://raw.githubusercontent.com/AMG22075/fridaeffe/refs/heads/main/img/Logo%202.jpeg">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="canonical" href="https://fridaeffe-bracelets.com">
     <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        
-        /* Flag Styling */
-        .flag-container {
-            position: relative;
-            display: inline-block;
-            margin-top: 10px;
-            margin-right: 5px;
-        }
-        .flag-icon {
-            width: 20px;
-            height: 15px;
-            display: inline-block;
-            background-size: cover;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-        .tooltip {
-            position: absolute;
-            background-color: black;
-            color: white;
-            font-size: 12px;
-            padding: 3px 6px;
-            border-radius: 4px;
-            white-space: nowrap;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.1s ease-in-out;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .flag-container:hover .tooltip {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        /* Arrow Animation on Hover */
-        .button-text {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s ease-in-out;
-        }
-        .button:hover .button-text svg {
-            transform: translateX(5px);
-        }
+      body { font-family: 'Inter', sans-serif; }
+      /* Flag Styling */
+      .flag-container {
+      position: relative;
+      display: inline-block;
+      margin-top: 10px;
+      margin-right: 5px;
+      }
+      .flag-icon {
+      width: 20px;
+      height: 15px;
+      display: inline-block;
+      background-size: cover;
+      cursor: pointer;
+      border-radius: 3px;
+      }
+      .tooltip {
+      position: absolute;
+      background-color: black;
+      color: white;
+      font-size: 12px;
+      padding: 3px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.1s ease-in-out;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      }
+      .flag-container:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+      }
+      @media (hover: hover) {
+      .flag-container:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+      }
+      }
+      @media (max-width: 768px) {
+      .tooltip {
+      display: none;
+      }
+      }
+      /* Arrow Animation on Hover */
+      .button-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease-in-out;
+      }
+      .button:hover .button-text svg {
+      transform: translateX(5px);
+      }
     </style>
-</head>
-<body class="relative flex flex-col items-center justify-center min-h-screen bg-[#f5e9dc] text-black px-10 py-14">
-    
+  </head>
+  <body class="relative flex flex-col items-center justify-center min-h-screen bg-[#f5e9dc] text-black px-10 py-14">
     <header class="absolute top-6 left-6">
-        <img src="https://raw.githubusercontent.com/AMG22075/fridaeffe/refs/heads/main/img/Logo%20tetx.png" alt="Brand Logo" class="w-40">
+      <img src="https://raw.githubusercontent.com/AMG22075/fridaeffe/refs/heads/main/img/Logo%20tetx.png" alt="Brand Logo" class="w-40">
     </header>
-
     <!-- Language Flags -->
     <div class="absolute top-6 right-6 flex gap-3">
-        <div class="flag-container">
-            <img src="https://flagcdn.com/w20/gb.png" class="flag-icon" data-lang="en" alt="English">
-            <span class="tooltip">English</span>
-        </div>
-        <div class="flag-container">
-            <img src="https://flagcdn.com/w20/it.png" class="flag-icon" data-lang="it" alt="Italiano">
-            <span class="tooltip">Italiano</span>
-        </div>
-        <div class="flag-container">
-            <img src="https://flagcdn.com/w20/jp.png" class="flag-icon" data-lang="ja" alt="日本語">
-            <span class="tooltip">日本語</span>
-        </div>
+      <div class="flag-container">
+        <img src="https://flagcdn.com/w20/gb.png" class="flag-icon" data-lang="en" alt="English">
+        <span class="tooltip">English</span>
+      </div>
+      <div class="flag-container">
+        <img src="https://flagcdn.com/w20/it.png" class="flag-icon" data-lang="it" alt="Italiano">
+        <span class="tooltip">Italiano</span>
+      </div>
+      <div class="flag-container">
+        <img src="https://flagcdn.com/w20/jp.png" class="flag-icon" data-lang="ja" alt="日本語">
+        <span class="tooltip">日本語</span>
+      </div>
     </div>
-
     <div class="flex flex-col items-center gap-6 mt-8 w-full max-w-[350px]">
-        <p id="textAbovePhoto" class="text-lg font-semibold text-[#800202] p-3 text-center">
-            Braccialetti di Classe Fatti a Mano
-        </p>
-        <img src="https://raw.githubusercontent.com/AMG22075/fridaeffe/refs/heads/main/img/Sole.jpg" alt="Product Image" class="w-full rounded-lg shadow-md">
-
-        <nav aria-label="Primary Navigation" class="flex flex-col gap-4 w-full">
-            <a href="https://fridaeffe.etsy.com?coupon=FRD858" id="shopEtsy" class="button bg-[#800202] hover:bg-opacity-90 text-white py-2 px-6 rounded-md text-md text-center w-full flex items-center justify-center">
-                <span class="button-text">
-                    <span id="shopEtsyText">Compra su Etsy (Sconto 10%)</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" class="size-5 ml-2 stroke-[0.5]">
-                        <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" />
-                    </svg>
-                </span>
-            </a>
-
-            <a href="https://www.vinted.it/member/249274341" id="shopVinted" class="button bg-[#800202] hover:bg-opacity-90 text-white py-2 px-6 rounded-md text-md text-center w-full flex items-center justify-center">
-                <span class="button-text">
-                    <span id="shopVintedText">Compra su Vinted</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" class="size-5 ml-2 stroke-[0.5]">
-                        <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" />
-                    </svg>
-                </span>
-            </a>
-        </nav>
-    </div>
-
-    <footer class="mt-16 flex flex-col items-center gap-2">
-        <a href="https://www.instagram.com/fridaeffe_bracelets/" target="_blank" aria-label="Follow on Instagram">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="w-8 opacity-50 hover:opacity-100 transition-opacity">
+      <p id="textAbovePhoto" class="text-lg font-semibold text-[#800202] p-3 text-center">
+        Braccialetti di Classe Fatti a Mano
+      </p>
+      <img src="https://raw.githubusercontent.com/AMG22075/fridaeffe/refs/heads/main/img/Sole.jpg" alt="Product Image" class="w-full rounded-lg shadow-md">
+      <nav aria-label="Primary Navigation" class="flex flex-col gap-4 w-full">
+        <a href="https://fridaeffe.etsy.com?coupon=FRD858" id="shopEtsy" class="button bg-[#800202] hover:bg-opacity-90 text-white py-2 px-6 rounded-md text-md text-center w-full flex items-center justify-center">
+          <span class="button-text">
+            <span id="shopEtsyText">Compra su Etsy (Sconto 10%)</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" class="size-5 ml-2 stroke-[0.5]">
+              <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" />
+            </svg>
+          </span>
         </a>
-        <p class="text-xs text-[#800202] mt-4">&copy; Frida Effe Bracelets, <span id="currentYear"></span></p>
-        <p id="locationText" class="text-xs text-[#800202] mt-1" style="line-height: 1.1;">Milano, Italia</p>
+        <a href="https://www.vinted.it/member/249274341" id="shopVinted" class="button bg-[#800202] hover:bg-opacity-90 text-white py-2 px-6 rounded-md text-md text-center w-full flex items-center justify-center">
+          <span class="button-text">
+            <span id="shopVintedText">Compra su Vinted</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" class="size-5 ml-2 stroke-[0.5]">
+              <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" />
+            </svg>
+          </span>
+        </a>
+      </nav>
+    </div>
+    <footer class="mt-16 flex flex-col items-center gap-2">
+      <a href="https://www.instagram.com/fridaeffe_bracelets/" target="_blank" aria-label="Follow on Instagram">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="w-8 opacity-50 hover:opacity-100 transition-opacity">
+      </a>
+      <p class="text-xs text-[#800202] mt-4">&copy; Frida Effe Bracelets, <span id="currentYear"></span></p>
+      <p id="locationText" class="text-xs text-[#800202] mt-1" style="line-height: 1.1;">Milano, Italia</p>
     </footer>
-
     <script>
-        document.getElementById("currentYear").textContent = new Date().getFullYear();
-
-        function changeLanguage(lang) {
-            const translations = {
-                en: { textAbovePhoto: "Handmade Classy Bracelets", shopEtsyText: "Shop on Etsy (10% Discount)", shopVintedText: "Shop on Vinted", locationText: "Milan, Italy", metaDescription: "Handmade classy bracelets. Discover unique jewelry crafted with love." },
-                it: { textAbovePhoto: "Braccialetti di Classe Fatti a Mano", shopEtsyText: "Compra su Etsy (Sconto 10%)", shopVintedText: "Compra su Vinted", locationText: "Milano, Italia", metaDescription: "Braccialetti di classe fatti a mano. Scopri gioielli unici realizzati con amore." },
-                ja: { textAbovePhoto: "手作りの上品なブレスレット", shopEtsyText: "Etsyで購入（10％割引）", shopVintedText: "Vintedで購入", locationText: "ミラノ、イタリア", metaDescription: "手作りの上品なブレスレット。愛情を込めて作られたユニークなジュエリーを発見してください。" }
-            };
-
-            document.getElementById("textAbovePhoto").textContent = translations[lang].textAbovePhoto;
-            document.getElementById("shopEtsyText").textContent = translations[lang].shopEtsyText;
-            document.getElementById("shopVintedText").textContent = translations[lang].shopVintedText;
-            document.getElementById("locationText").textContent = translations[lang].locationText;
-            document.getElementById("meta-description").setAttribute("content", translations[lang].metaDescription);
-            localStorage.setItem("selectedLang", lang);
-        }
-
-        const browserLang = navigator.language.startsWith("it") ? "it" : navigator.language.startsWith("ja") ? "ja" : "en";
-        changeLanguage(localStorage.getItem("selectedLang") || browserLang);
-
-        document.querySelectorAll(".flag-icon").forEach(flag => flag.addEventListener("click", () => changeLanguage(flag.dataset.lang)));
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+      
+      function changeLanguage(lang) {
+          const translations = {
+              en: { textAbovePhoto: "Handmade Classy Bracelets", shopEtsyText: "Shop on Etsy (10% Discount)", shopVintedText: "Shop on Vinted", locationText: "Milan, Italy", metaDescription: "Handmade classy bracelets. Discover unique jewelry crafted with love." },
+              it: { textAbovePhoto: "Braccialetti di Classe Fatti a Mano", shopEtsyText: "Compra su Etsy (Sconto 10%)", shopVintedText: "Compra su Vinted", locationText: "Milano, Italia", metaDescription: "Braccialetti di classe fatti a mano. Scopri gioielli unici realizzati con amore." },
+              ja: { textAbovePhoto: "手作りの上品なブレスレット", shopEtsyText: "Etsyで購入（10％割引）", shopVintedText: "Vintedで購入", locationText: "ミラノ、イタリア", metaDescription: "手作りの上品なブレスレット。愛情を込めて作られたユニークなジュエリーを発見してください。" }
+          };
+      
+          document.getElementById("textAbovePhoto").textContent = translations[lang].textAbovePhoto;
+          document.getElementById("shopEtsyText").textContent = translations[lang].shopEtsyText;
+          document.getElementById("shopVintedText").textContent = translations[lang].shopVintedText;
+          document.getElementById("locationText").textContent = translations[lang].locationText;
+          document.getElementById("meta-description").setAttribute("content", translations[lang].metaDescription);
+          localStorage.setItem("selectedLang", lang);
+      }
+      
+      const browserLang = navigator.language.startsWith("it") ? "it" : navigator.language.startsWith("ja") ? "ja" : "en";
+      changeLanguage(localStorage.getItem("selectedLang") || browserLang);
+      
+      document.querySelectorAll(".flag-icon").forEach(flag => flag.addEventListener("click", () => changeLanguage(flag.dataset.lang)));
     </script>
-
-</body>
+  </body>
 </html>
