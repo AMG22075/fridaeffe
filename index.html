@@ -142,7 +142,7 @@
           localStorage.setItem("selectedLang", lang);
       }
       
-      const browserLang = navigator.language.startsWith("it") ? "it" : navigator.language.startsWith("ja") ? "ja" : "en";
+      const browserLang = navigator.language.startsWith("it") ? "it" : navigator.language.startsWith("ja") ? "ja" : navigator.language.startsWith("ja-0") ? "ja-0" : "en";
       changeLanguage(localStorage.getItem("selectedLang") || browserLang);
       
       document.querySelectorAll(".flag-icon").forEach(flag => flag.addEventListener("click", () => changeLanguage(flag.dataset.lang)));
