@@ -130,8 +130,7 @@
           const translations = {
               en: { textAbovePhoto: "Handmade Classy Bracelets", shopEtsyText: "Shop on Etsy (10% Discount)", shopVintedText: "Shop on Vinted", locationText: "Milan, Italy", metaDescription: "Handmade classy bracelets. Discover unique jewelry crafted with love." },
               it: { textAbovePhoto: "Braccialetti di Classe Fatti a Mano", shopEtsyText: "Compra su Etsy (Sconto 10%)", shopVintedText: "Compra su Vinted", locationText: "Milano, Italia", metaDescription: "Braccialetti di classe fatti a mano. Scopri gioielli unici realizzati con amore." },
-              ja: { textAbovePhoto: "Handmade Classy Bracelets", shopEtsyText: "Shop on Etsy (10% Discount)", shopVintedText: "Shop on Vinted", locationText: "Milan, Italy", metaDescription: "Handmade classy bracelets. Discover unique jewelry crafted with love." },
-              ja-0: { textAbovePhoto: "手作りの上品なブレスレット", shopEtsyText: "Etsyで購入（10％割引）", shopVintedText: "Vintedで購入", locationText: "ミラノ、イタリア", metaDescription: "手作りの上品なブレスレット。愛情を込めて作られたユニークなジュエリーを発見してください。" }
+              ja: { textAbovePhoto: "手作りの上品なブレスレット", shopEtsyText: "Etsyで購入（10％割引）", shopVintedText: "Vintedで購入", locationText: "ミラノ、イタリア", metaDescription: "手作りの上品なブレスレット。愛情を込めて作られたユニークなジュエリーを発見してください。" }
 `          };
       
           document.getElementById("textAbovePhoto").textContent = translations[lang].textAbovePhoto;
@@ -142,7 +141,7 @@
           localStorage.setItem("selectedLang", lang);
       }
       
-      const browserLang = navigator.language.startsWith("it") ? "it" : navigator.language.startsWith("ja") ? "ja" : navigator.language.startsWith("ja-0") ? "ja-0" : "en";
+      const browserLang = navigator.language.startsWith("it") ? "it" : navigator.language.startsWith("ja") ? "ja" : "en";
       changeLanguage(localStorage.getItem("selectedLang") || browserLang);
       
       document.querySelectorAll(".flag-icon").forEach(flag => flag.addEventListener("click", () => changeLanguage(flag.dataset.lang)));
